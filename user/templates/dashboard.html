@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Dashboard</h2>
+            <p>Username: {{ request.user.username }}</p>
+            <p>Email: {{ request.user.email }}</p>
+            <p>Business Name: {{ request.user.customer.business_name }}</p>
+            <p>Business Category: {{ request.user.customer.business_category }}</p>
+
+            <a class="btn btn-primary" href="{% url 'view-inventory' %}">View Inventory</a>
+            <a class="btn btn-primary" href="{% url 'add-inventory' %}">Add Inventory</a>
+        </div>
+    </div>
+</body>
+</html>

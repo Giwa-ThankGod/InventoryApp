@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Inventory</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Add Inventory</h2>
+
+            <form action="" method="post">
+                {% csrf_token %}
+
+                <input type="text" name="name" value="{{ product.name }}" placeholder="name" required> <br><br>
+
+                <textarea name="description" cols="30" rows="5" placeholder="description">{{ product.description }}</textarea> <br><br>
+                
+                <input type="number" name="price" value="{{ product.price }}" placeholder="price" required> <br><br>
+                <input type="number" name="quantity" value="{{ product.quantity }}" placeholder="quantity" required> <br><br>
+
+                {% if product %}
+                    <button>Update</button>
+                {% else %}
+                    <button>Submit</button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

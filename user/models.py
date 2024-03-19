@@ -24,5 +24,8 @@ class Product(models.Model):
     price = models.FloatField(default=0.0)
     quantity = models.IntegerField(default=0)
 
+    # Connecting product to a customer.
+    customer = models.ForeignKey(Customer, null=True, on_delete=models.CASCADE)
+
     def __str__(self):
         return self.name
